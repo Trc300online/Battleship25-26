@@ -1,7 +1,15 @@
 public enum ShipType {
-    CARRIER,
-    BATTLESHIP,
-    CRUISER,
-    SUBMARINE,
-    DESTROYER;
+    CARRIER (5,     2), // == 0
+    BATTLESHIP (4,  3), // == 1
+    CRUISER (3,     4),
+    SUBMARINE (3,   3),
+    DESTROYER (2,   5); // == 4
+
+    private final int size;
+    private final int amount;
+
+    ShipType(int size, int amount) {
+        this.size = size;
+        this.amount = amount;
+    }
 }
