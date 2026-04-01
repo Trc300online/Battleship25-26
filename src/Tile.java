@@ -1,30 +1,27 @@
 public class Tile {
 
-    private boolean isShipPart = false;
+    private ShipPart shipPart = null;
     private boolean isRevealed = false;
-    private boolean isHit = false;
 
-    public boolean getShip() {
-        return isShip;
+    public boolean getShipPart() {
+        return shipPart;
     }
 
-    public void setShip(boolean ship) {
-        isShip = ship;
+    public void setShipPart(ShipPart part) {
+        shipPart = part;
     }
 
     public boolean getRevealed() {
         return isRevealed;
     }
 
-    public void toggleRevealed() {
-        isRevealed = !isRevealed;
+    public void bombed() {
+        isRevealed = true;
     }
 
-    public boolean getHit() {
-        return isHit;
-    }
-
-    public void setHit(boolean hit) {
-        isHit = hit;
+    public boolean hasShip() {
+        return (shipPart != null);
     }
 }
+
+

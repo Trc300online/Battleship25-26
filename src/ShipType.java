@@ -12,4 +12,12 @@ public enum ShipType {
         this.size = size;
         this.amount = amount;
     }
+
+    public int getSize() {
+        return size;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
 }
