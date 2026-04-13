@@ -9,9 +9,4 @@ public enum Direction {
     Direction(int dir) {
         this.dir = dir;
     }
-
-    public Direction getRandomDir() {
-        int rand = new Random().nextInt(2);
-        return rand;
-    }
 }

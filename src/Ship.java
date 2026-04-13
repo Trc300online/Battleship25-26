@@ -4,7 +4,21 @@ public class Ship {
     private Direction direction;
     private ShipType type;
     private ShipPart[] shipParts;
-    private boolean Sunken = false;
+
+    public Ship(int[] hPos, Direction dir, ShipType type) {
+        this.headPosition = hPos;
+        this.direction = dir;
+        this.type = type;
+        if (dir == Direction.VERTICAL) {
+            for (int i = 0; i < type.getSize(); i++) {
+                new ShipPart(hPos[0]+i, hPos[1], type);
+            }
+        } else {
+            for (int i = 0; i < type.getSize(); i++) {
+                new ShipPart(hPos[0], hPos[1]+i, type);
+            }
+        }
+    }
 
     public int[] getHeadPosition() {
         return headPosition;
@@ -49,7 +63,7 @@ public class Ship {
         return true;
     }
 
-    public void sink() {
+    /*public void sink() {
         Sunken = true;
-    }
+    }*/
 }
