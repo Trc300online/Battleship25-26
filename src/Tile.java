@@ -3,9 +3,9 @@ public class Tile {
     private ShipPart shipPart = null;
     private boolean isRevealed = false;
 
-    /*public ShipPart getShipPart() {
+    public ShipPart getShipPart() {
         return shipPart;
-    }*/
+    }
 
     public void setShipPart(ShipPart part) {
         shipPart = part;

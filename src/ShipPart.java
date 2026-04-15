@@ -2,9 +2,10 @@ public class ShipPart {
 
     private int[] position = new int[2];
     private boolean isHit = false;
-    private ShipType pare;
+    //private ShipType pare;
+    private Ship pare;
 
-    public ShipPart(int y, int x, ShipType pare) {
+    public ShipPart(int y, int x, Ship pare) {
         this.position[0] = y;
         this.position[1] = x;
         this.pare = pare;
@@ -14,7 +15,7 @@ public class ShipPart {
         return isHit;
     }
 
-    public ShipType getPare() {
+    public Ship getPare() {
         return pare;
     }
 

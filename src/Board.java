@@ -11,6 +11,10 @@ public class Board {
         populateBoard();
     }
 
+    public Tile[][] getBoardInsight() {
+        return board;
+    }
+
     private void checkSize() {
         if (ShipType.getTotalSize() > (board.length * board[0].length)/3) {
             // screen.errorHandler() --> board too small, reduce the amount of ships to play with or increase the board size

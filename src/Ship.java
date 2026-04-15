@@ -1,9 +1,11 @@
+import java.util.ArrayList;
+
 public class Ship {
 
     private int[] headPosition = new int[2];
     private Direction direction;
     private ShipType type;
-    private ShipPart[] shipParts;
+    private ArrayList<ShipPart> shipParts;
 
     public Ship(int[] hPos, Direction dir, ShipType type) {
         this.headPosition = hPos;
@@ -11,11 +13,11 @@ public class Ship {
         this.type = type;
         if (dir == Direction.VERTICAL) {
             for (int i = 0; i < type.getSize(); i++) {
-                new ShipPart(hPos[0]+i, hPos[1], type);
+                shipParts.add(new ShipPart(hPos[0]+i, hPos[1], this));
             }
         } else {
             for (int i = 0; i < type.getSize(); i++) {
-                new ShipPart(hPos[0], hPos[1]+i, type);
+                shipParts.add(new ShipPart(hPos[0], hPos[1]+i, this));
             }
         }
     }
@@ -44,18 +46,18 @@ public class Ship {
         this.type = type;
     }
 
-    public ShipPart[] getShipParts() {
+    public ArrayList<ShipPart> getShipParts() {
         return shipParts;
     }
 
-    public void setShipParts(ShipPart[] shipParts) {
+    /*public void setShipParts(ShipPart[] shipParts) {
         this.shipParts = shipParts;
-    }
+    }*/
 
     public boolean IsSunk() {
 
-        for (int i = 0; i < shipParts.length; i++) {
-            if (!shipParts[i].isHit()) {
+        for (int i = 0; i < shipParts.size(); i++) {
+            if (!shipParts.get(i).isHit()) {
                 return false;
             }
         }

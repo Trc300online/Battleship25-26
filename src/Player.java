@@ -12,7 +12,7 @@ public class Player {
         return name;
     }
 
-    public Board getBoard() {
+    public Board getPlayerBoard() {
         return board;
     }
 
@@ -22,5 +22,9 @@ public class Player {
 
     public void setBoard(Board board) {
         this.board = board;
+    }
+
+    public boolean beenShot(int[] coords) {
+        return (getPlayerBoard().getBoardInsight()[coords[0]][coords[1]].hasShip())
     }
 }
