@@ -90,6 +90,10 @@ public class Board {
         return true;
     }
 
+    public ArrayList<Ship> getShipList() {
+        return shipList;
+    }
+
     // direccio = ( numero random > 0.5 ) ? horitzontal : vertical ;
 
 

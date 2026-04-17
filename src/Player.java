@@ -25,6 +25,6 @@ public class Player {
     }
 
     public boolean beenShot(int[] coords) {
-        return (getPlayerBoard().getBoardInsight()[coords[0]][coords[1]].hasShip())
+        return (getPlayerBoard().getBoardInsight()[coords[0]][coords[1]].hasShip());
     }
 }
