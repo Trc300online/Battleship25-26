@@ -15,11 +15,9 @@ public class Game {
         while (gameContinue) {
             Screen.printPublicBoard(playerList[(turnCounter+1)%2].getPlayerBoard());
             Screen.printPrivateBoard(playerList[turnCounter%2].getPlayerBoard());
-            //player action
             int[] coords = getAction();
             doAction(coords);
-            gameContinue = checkWin(playerList[(turnCounter+1)%2].getPlayerBoard()); // this methode checks if rival board has all ship sunk/shipParts hitted.
-            // gameContinue = !checkWin(playerList[(turnCounter+1)%2].getPlayerBoard());
+            gameContinue = checkWin(playerList[(turnCounter+1)%2].getPlayerBoard());
             turnCounter++;
         }
     }
@@ -33,15 +31,6 @@ public class Game {
         }
 
         return false;
-
-        /*
-        for (int i = 0; i < playerBoard.getShipList().size(); i++) {
-            if (playerBoard.getShipList().get(i).IsSunk()) {
-                return true;
-            }
-        }
-
-        return false;*/
     }
 
     public int[] getAction() {
@@ -72,17 +61,12 @@ public class Game {
     public void doAction(int[] coords) {
         playerList[(turnCounter+1)%2].getPlayerBoard().getBoardInsight()[coords[0]][coords[1]].bombed();
 
-        if (playerList[(turnCounter+1)%2].beenShot(coords)) { //encapsular amb un metode que retorni boolean (per major llegibilitat)
+        if (playerList[(turnCounter+1)%2].beenShot(coords)) {
             playerList[(turnCounter+1)%2].getPlayerBoard().getBoardInsight()[coords[0]][coords[1]].getShipPart().setHit();
 
-            if (playerList[(turnCounter+1)%2].getPlayerBoard().getBoardInsight()[coords[0]][coords[1]].getShipPart().getPare().IsSunk()  /* el ship pare is sunk */) {
-                Screen.sunkMsg(playerList[(turnCounter+1)%2].getPlayerBoard().getBoardInsight()[coords[0]][coords[1]].getShipPart().getPare().getType());  // msg/alert You have sunk a *shipType*, Congrats!!
+            if (playerList[(turnCounter+1)%2].getPlayerBoard().getBoardInsight()[coords[0]][coords[1]].getShipPart().getPare().IsSunk()) {
+                Screen.sunkMsg(playerList[(turnCounter+1)%2].getPlayerBoard().getBoardInsight()[coords[0]][coords[1]].getShipPart().getPare().getType());
             }
         }
     }
 }
-
-/*
-playerList[turnCounter%2] --> current player
-playerList[(turnCounter+1)%2]  --> other player
-*/

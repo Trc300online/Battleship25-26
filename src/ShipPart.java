@@ -2,7 +2,6 @@ public class ShipPart {
 
     private int[] position = new int[2];
     private boolean isHit = false;
-    //private ShipType pare;
     private Ship pare;
 
     public ShipPart(int y, int x, Ship pare) {
@@ -26,12 +25,4 @@ public class ShipPart {
     public void setHit() {
         isHit = true;
     }
-
-    /*public void setPare(ShipType pare) {
-        this.pare  = pare;
-    }
-
-    public void setPosition(int[] position) {
-        this.position = position;
-    }*/
 }

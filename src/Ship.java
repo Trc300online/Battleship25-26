@@ -50,10 +50,6 @@ public class Ship {
         return shipParts;
     }
 
-    /*public void setShipParts(ShipPart[] shipParts) {
-        this.shipParts = shipParts;
-    }*/
-
     public boolean IsSunk() {
 
         for (int i = 0; i < shipParts.size(); i++) {
@@ -64,8 +60,4 @@ public class Ship {
 
         return true;
     }
-
-    /*public void sink() {
-        Sunken = true;
-    }*/
 }

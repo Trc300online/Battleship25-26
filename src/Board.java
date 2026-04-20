@@ -66,20 +66,8 @@ public class Board {
            int[] position = parts.get(i).getPosition();
            board[position[0]][position[1]].setShipPart(parts.get(i));
         }
-        // has d'iterar la collection de shipParts retornada pel mètod : nouVaixell.getShipParts()
-        // i per a cada shipPart li demanes les coordenades que les tens dins l'atribut position que es una matriu de sencers (x,y)
-        // vas a la tile corresponent a x,y i li assignes la partVaixell que estàs iterant en aquest moment !!
-        return newShip;
 
-        /*if (dir == Direction.VERTICAL) {
-            for (int i = 0; i < size; i++) {
-                board[y+i][x].setShipPart();
-            }
-        } else {
-            for (int i = 0; i < size; i++) {
-                board[y][x+i].setShipPart();
-            }
-        }*/
+        return newShip;
     }
 
     private boolean spaceFree(int y, int x, int size, Direction dir) {
@@ -103,9 +91,4 @@ public class Board {
     public ArrayList<Ship> getShipList() {
         return shipList;
     }
-
-    // direccio = ( numero random > 0.5 ) ? horitzontal : vertical ;
-
-
-
 }
