@@ -42,4 +42,13 @@ public class Screen {
         }
         System.out.println();
     }
+
+    public static void errorHandler(int code) {
+        if (code == 1) {
+            System.out.println("coords out of battlefiled, aim again!!");
+        }
+        if (code == 2) {
+            System.out.println("board too small, reduce the amount of ships to play with or increase the board size");
+        }
+    }
 }

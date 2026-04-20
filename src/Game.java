@@ -45,6 +45,7 @@ public class Game {
     }
 
     public int[] getAction() {
+
         int[] coords = new int[2];
 
         Scanner s1 = new Scanner(System.in);
@@ -54,7 +55,18 @@ public class Game {
         Screen.askCoords();
         coords[1] = s2.nextInt() -1;
 
+        if (!inBoard(coords)) {
+            Screen.errorHandler(1);
+            return getAction();
+        }
         return coords;
+    }
+
+    private boolean inBoard(int[] coords) {
+        if (coords[0] >= 0 && coords[0] <= playerList[(turnCounter+1)%2].getPlayerBoard().getBoardInsight().length-1 && coords[1] >= 0 && coords[1] <= playerList[(turnCounter+1)%2].getPlayerBoard().getBoardInsight()[0].length-1) {
+            return true;
+        }
+        return false;
     }
 
     public void doAction(int[] coords) {

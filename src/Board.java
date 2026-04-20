@@ -16,9 +16,9 @@ public class Board {
     }
 
     private void checkSize() {
-        if (ShipType.getTotalSize() > (board.length * board[0].length)/3) {
-            // screen.errorHandler() --> board too small, reduce the amount of ships to play with or increase the board size
-            // System.exit(0);
+        if (ShipType.getTotalSize() > (board.length * board[0].length)/2.5) {
+            Screen.errorHandler(2);
+            System.exit(0);
         }
     }
 

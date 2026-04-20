@@ -1,9 +1,9 @@
 public enum ShipType {
-    CARRIER (5,     2), // == 0
-    BATTLESHIP (4,  3), // == 1
-    CRUISER (3,     4),
+    CARRIER (5,     1), // == 0
+    BATTLESHIP (4,  2), // == 1
+    CRUISER (3,     3),
     SUBMARINE (3,   3),
-    DESTROYER (2,   5); // == 4
+    DESTROYER (2,   4); // == 4
 
     private final int size;
     private final int amount;
@@ -32,7 +32,7 @@ public enum ShipType {
     public static int getTotalSize() {
         int totalSize = 0;
         for (ShipType ship : ShipType.values()) {
-            totalSize += ship.getSize();
+            totalSize += ship.getSize() * ship.getAmount();
         }
         return totalSize;
     }
