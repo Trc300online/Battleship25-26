@@ -24,18 +24,22 @@ public class Screen {
     public static void printPublicBoard(Board playerBoard) {
 
         for (int i = 0; i < playerBoard.getBoardInsight().length; i++) {
+            System.out.println();
             for (int j = 0; j < playerBoard.getBoardInsight()[0].length; j++) {
-                System.out.println(playerBoard.getBoardInsight()[i][j].toStringPublic());
+                System.out.print(playerBoard.getBoardInsight()[i][j].toStringPublic());
             }
         }
+        System.out.println();
     }
 
     public static void printPrivateBoard(Board playerBoard) {
 
         for (int i = 0; i < playerBoard.getBoardInsight().length; i++) {
+            System.out.println();
             for (int j = 0; j < playerBoard.getBoardInsight()[0].length; j++) {
-                System.out.println(playerBoard.getBoardInsight()[i][j].toStringPrivate());
+                System.out.print(playerBoard.getBoardInsight()[i][j].toStringPrivate());
             }
         }
+        System.out.println();
     }
 }

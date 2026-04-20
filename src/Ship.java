@@ -5,7 +5,7 @@ public class Ship {
     private int[] headPosition = new int[2];
     private Direction direction;
     private ShipType type;
-    private ArrayList<ShipPart> shipParts;
+    private ArrayList<ShipPart> shipParts = new ArrayList<>();
 
     public Ship(int[] hPos, Direction dir, ShipType type) {
         this.headPosition = hPos;

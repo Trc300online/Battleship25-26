@@ -59,7 +59,17 @@ public class Board {
         int[] hPos = new int[2];
         hPos[0] = y;
         hPos[1] = x;
-        return new Ship(hPos, dir, ship);
+        Ship newShip =  new Ship(hPos, dir, ship);
+        ArrayList<ShipPart> parts = newShip.getShipParts();
+
+        for (int i = 0; i < parts.size(); i++) {
+           int[] position = parts.get(i).getPosition();
+           board[position[0]][position[1]].setShipPart(parts.get(i));
+        }
+        // has d'iterar la collection de shipParts retornada pel mètod : nouVaixell.getShipParts()
+        // i per a cada shipPart li demanes les coordenades que les tens dins l'atribut position que es una matriu de sencers (x,y)
+        // vas a la tile corresponent a x,y i li assignes la partVaixell que estàs iterant en aquest moment !!
+        return newShip;
 
         /*if (dir == Direction.VERTICAL) {
             for (int i = 0; i < size; i++) {

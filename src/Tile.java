@@ -25,13 +25,13 @@ public class Tile {
 
     public String toStringPublic() {
 
-        if (isRevealed == false) {
+        if (getRevealed() == false) {
             return "\uD83C\uDF2B\uFE0F\u200B";
         }
-        if (isRevealed == true && hasShip() == false) {
+        if (getRevealed() == true && hasShip() == false) {
             return "\uD83C\uDF0A\u200B";
         }
-        if (isRevealed == true && hasShip() == true) {
+        if (getRevealed() == true && hasShip() == true) {
             return "\uD83D\uDCA5\u200B";
         }
 
@@ -42,8 +42,7 @@ public class Tile {
 
         if (hasShip() == false) {
             return "\uD83C\uDF0A\u200B";
-        }
-        if (hasShip() == true) {
+        }else if (hasShip() == true) {
             return "\uD83D\uDEA2\u200B";
         }
         if (getShipPart().isHit()) {

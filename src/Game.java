@@ -49,10 +49,10 @@ public class Game {
 
         Scanner s1 = new Scanner(System.in);
         Screen.askCoords();
-        coords[0] = s1.nextInt();
+        coords[0] = s1.nextInt() -1;
         Scanner s2 = new Scanner(System.in);
         Screen.askCoords();
-        coords[1] = s2.nextInt();
+        coords[1] = s2.nextInt() -1;
 
         return coords;
     }
